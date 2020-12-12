@@ -16,7 +16,14 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "bootstrap": "^5.0.0-beta1",
+    "css-loader": "^5.0.1",
     "html-webpack-plugin": "^4.5.0",
+    "jquery": "^3.5.1",
+    "postcss-loader": "^4.1.0",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^2.0.0",
     "webpack-dev-server": "^3.11.0"
   }
 }
