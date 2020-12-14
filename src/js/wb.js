@@ -10,7 +10,7 @@ $('#white_board').mousedown(function (e) {
 });
 $('#white_board').mousemove(function (e) {
     if (paint) {
-        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
+        addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, $('#size').val(), true);
         redraw();
     }
 });
@@ -20,42 +20,31 @@ $('#white_board').mouseup(function (e) {
 $('#white_board').mouseleave(function (e) {
     paint = false;
 });
-$('#choosePurpleSimpleColors').click(()=>{
-    curColor = colorPurple;
-})
-$('#chooseGreenSimpleColors').click(()=>{
-    curColor = colorGreen;
-})
-$('#chooseYellowSimpleColors').click(()=>{
-    curColor = colorYellow;
-})
-$('#chooseBrownSimpleColors').click(()=>{
-    curColor = colorBrown;
+$('#colorSelector').change((e)=>{
+    // console.log(e.target.value)
+    curColor = e.target.value
 })
 var clickX = new Array();
 var clickY = new Array();
 var clickDrag = new Array();
-var colorPurple = "#cb3594";
-var colorGreen = "#659b41";
-var colorYellow = "#ffcf33";
-var colorBrown = "#986928";
-
+var lineWidth = new Array();
 var curColor = "#000";
 var clickColor = new Array();
 var paint;
 
-function addClick(x, y, dragging) {
+function addClick(x, y, size, dragging) {
     clickX.push(x);
     clickY.push(y);
     clickDrag.push(dragging);
     clickColor.push(curColor);
+    lineWidth.push(size);
 }
 function redraw() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 
-    // context.strokeStyle = "#df4b26";
+    context.strokeStyle = "#df4b26";
     context.lineJoin = "round";
-    context.lineWidth = $('#size').val(); // change the size of the stroke
+    // context.lineWidth = ; // change the size of the stroke
     
     for (var i = 0; i < clickX.length; i++) {
         context.beginPath();
@@ -66,6 +55,7 @@ function redraw() {
         }
         context.lineTo(clickX[i], clickY[i]);
         context.closePath();
+        context.lineWidth = lineWidth[i];
         context.strokeStyle = clickColor[i]
         context.stroke();
     }
