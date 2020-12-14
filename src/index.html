@@ -9,6 +9,20 @@
   </head>
   <body>
     <div class="container-fluid no-gutters">
+      <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
+        <!-- Then put toasts within -->
+        <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <!-- <img src="..." class="rounded me-2" alt="..."> -->
+            <strong class="me-auto">إشعار</strong>
+            <small>منذ 10 دقائق</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            مرحباً هذا اشعار
+          </div>
+        </div>
+      </div>
       <div class="row no-gutters">
         <div class="col-lg-12">
           <h1>بسم الله الرحمن الرحيم</h1>
@@ -36,20 +50,6 @@
           <button id="chooseBrownSimpleColors" type="button">Brown</button>
           <div id="canvas_div">
               <canvas id="white_board" width="700" height="700" style="border: 1px solid "></canvas>
-          </div>
-        </div>
-      </div>
-      <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
-        <!-- Then put toasts within -->
-        <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <!-- <img src="..." class="rounded me-2" alt="..."> -->
-            <strong class="me-auto">إشعار</strong>
-            <small>منذ 10 دقائق</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            مرحباً هذا اشعار
           </div>
         </div>
       </div>

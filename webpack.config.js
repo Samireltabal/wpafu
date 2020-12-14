@@ -3,11 +3,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
 const webpack = require('webpack'); //to access built-in plugins
 
 module.exports = {
-    entry: './src/index.js',
-    mode: 'production',
+    entry: {
+        main: './src/index.js',
+        wb: './src/js/wb.js'
+    },
+    mode: 'development',
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: 'app.bundle.js'
+      filename: '[name].bundle.js'
     },
     devServer: {
         contentBase: './dist',
