@@ -17,12 +17,12 @@ export function CanvasDesigner() {
       arrow: true,
       pencil: true,
       dragSingle: true,
-      dragMultiple: true,
+      dragMultiple: false,
       eraser: true,
       rectangle: true,
-      arc: true,
-      bezier: true,
-      quadratic: true,
+      arc: false,
+      bezier: false,
+      quadratic: false,
       text: true,
       image: true,
       pdf: true,
@@ -30,8 +30,8 @@ export function CanvasDesigner() {
       zoom: true,
       lineWidth: true,
       colorsPicker: true,
-      extraOptions: true,
-      code: true
+      extraOptions: false,
+      code: false
   };
 
   designer.icons = {

@@ -1,3 +1,10 @@
+body {
+    background-color: #535c68;
+}
 h1 {
     color: red;
+}
+#canvas_div {
+    border-radius: 4px;
+    border: #000 1px solid;
 }

@@ -9,20 +9,39 @@
   </head>
   <body>
     <div class="container-fluid no-gutters">
-      <div aria-live="polite" aria-atomic="true" class="d-flex justify-content-center align-items-center w-100">
-        <!-- Then put toasts within -->
-        <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
-          <div class="toast-header">
-            <!-- <img src="..." class="rounded me-2" alt="..."> -->
-            <strong class="me-auto">إشعار</strong>
-            <small>منذ 10 دقائق</small>
-            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-          </div>
-          <div class="toast-body">
-            مرحباً هذا اشعار
-          </div>
-        </div>
+      <div aria-live="polite" aria-atomic="true" class="position-relative">
+  <!-- Position it: -->
+  <!-- - `.toast-container` for spacing between toasts -->
+  <!-- - `.position-absolute`, `top-0` & `end-0` to position the toasts in the upper right corner -->
+  <!-- - `.p-3` to prevent the toasts from sticking to the edge of the container  -->
+  <div class="toast-container position-absolute top-0 end-0 p-3">
+
+    <!-- Then put toasts within -->
+    <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small class="text-muted">just now</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
       </div>
+      <div class="toast-body">
+        See? Just like this.
+      </div>
+    </div>
+
+    <div class="toast" id="myToast" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="toast-header">
+        <img src="..." class="rounded me-2" alt="...">
+        <strong class="me-auto">Bootstrap</strong>
+        <small class="text-muted">2 seconds ago</small>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+      <div class="toast-body">
+        Heads up, toasts will stack automatically
+      </div>
+    </div>
+  </div>
+</div>
       <div class="row no-gutters">
         <div class="col-lg-12">
           <h1>بسم الله الرحمن الرحيم</h1>
@@ -30,24 +49,15 @@
         <div class="col-lg-12">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat asperiores doloremque accusantium incidunt, porro, voluptates odio quod molestias ut amet, aliquid nesciunt cumque ipsum. Similique placeat quasi laboriosam hic repudiandae.</p>
         </div>
-        <div class="col-lg-12">
-          <button id="toastButton">
-            open
-          </button>
-        </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-12">
-          <input type="number" id="size" />
-        </div>
-        <div class="col-lg-12">
-          <button id="clear_complete">Clear</button>
-          <!-- <input id="size" placeholder="Enter the size" /> -->
-          <span class="highlight">Choose a color: </span>
-          <input type="color" name="color" id="colorSelector" />
-          <div id="canvas_div">
+        <div class="col-lg-6">
+          <div id="canvas_div" style="height: 600px;">
               <!-- <canvas id="white_board" width="700" height="700" style="border: 1px solid "></canvas> -->
           </div>
+        </div>
+        <div class="col-lg-6">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam voluptates quaerat, reiciendis perspiciatis ad, unde commodi nulla neque sunt quam magni laudantium earum facere autem id. Iure neque ducimus natus?
         </div>
       </div>
     </div>
